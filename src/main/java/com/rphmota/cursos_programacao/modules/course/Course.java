@@ -1,7 +1,9 @@
-package com.rphmota.cursos_programacao.modules.course.entity;
+package com.rphmota.cursos_programacao.modules.course;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,15 +19,16 @@ public class Course {
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
-
   private String name;
 
   private String category;
 
   private Boolean active;
 
+  @CreationTimestamp
   private LocalDateTime createdAt;
   
+  @CreationTimestamp
   private LocalDateTime updatedAt;
 
   
