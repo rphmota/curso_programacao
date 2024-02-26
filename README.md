@@ -39,8 +39,8 @@ Cada curso deve conter:
 
 1. **Clone o repositório**
 ```bash
-   git clone [URL_DO_REPOSITÓRIO]
-   cd [NOME_DO_REPOSITÓRIO]
+   git clone https://github.com/rphmota/curso_programacao
+   cd curso_programacao
 ```
 
 
