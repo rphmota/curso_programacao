@@ -11,7 +11,9 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course,UUID>{
   Optional<Course>  findByName(String name);
-  
+
+  List<Course> findByNameContainingIgnoreCase(String filter);
+
   List<Course> findByCategory(String category);
 
   
