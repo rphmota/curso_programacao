@@ -53,12 +53,17 @@ Cada curso deve conter:
 mvn install
 ```
 
-4. **Execute a aplicação**
+4. **Levante o container dock com as informacoes de banco de dados no arquivo application.properties**
+```bash
+docker compose up
+```
+
+5. **Execute a aplicação**
 ```bash
 mvn spring-boot:run
 ```
 
-5. **Acesse as rotas através de um cliente HTTP, como Postman ou Insomnia.**
+6. **Acesse as rotas através de um cliente HTTP, como Postman ou Insomnia.**
 
 ## 📚 Recursos Adicionais
 
