@@ -31,6 +31,19 @@ public class Course {
   @CreationTimestamp
   private LocalDateTime updatedAt;
 
+  public void updateName(String name) {
+    if (name != null && !name.trim().isEmpty()) {
+        this.name = name;
+    }
+  }
+
+  // Método para atualizar a categoria, se o valor for válido
+  public void updateCategory(String category) {
+      if (category != null && !category.trim().isEmpty()) {
+          this.category = category;
+      }
+  }
+
   
   
 }
