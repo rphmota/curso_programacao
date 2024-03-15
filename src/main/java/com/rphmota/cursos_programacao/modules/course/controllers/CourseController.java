@@ -24,6 +24,7 @@ import com.rphmota.cursos_programacao.modules.course.useCases.CreateCourseUseCas
 import com.rphmota.cursos_programacao.modules.course.useCases.DeleteCourseUseCase;
 import com.rphmota.cursos_programacao.modules.course.useCases.FindCourseUseCase;
 import com.rphmota.cursos_programacao.modules.course.useCases.ListCourseUseCase;
+import com.rphmota.cursos_programacao.modules.course.useCases.ToggleStatusCourseUseCase;
 import com.rphmota.cursos_programacao.modules.course.useCases.UpdateCourseUseCase;
 
 
@@ -44,6 +45,9 @@ public class CourseController {
 
   @Autowired
   private UpdateCourseUseCase updateCourseUseCase;
+
+  @Autowired
+  private ToggleStatusCourseUseCase toggleStatusCourseUseCase;
 
 
 
@@ -92,4 +96,14 @@ public class CourseController {
       return ResponseEntity.badRequest().body(e.getMessage());
     }
   }
+
+@PatchMapping("/{uuid}/activate")
+public ResponseEntity<Object> activate(@PathVariable @NonNull UUID uuid){
+  try {
+    var updatedCourse = toggleStatusCourseUseCase.execute(uuid);
+    return ResponseEntity.ok().body(updatedCourse);
+  } catch (Exception e) {
+    return ResponseEntity.badRequest().body(e.getMessage());
+  }
+}
 }
